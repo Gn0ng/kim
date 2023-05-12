@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="'/'">메인으로</a>
+<form action="/test" role="form" method="post" th:object="${bomdto}">
+    <div >
+        <h2 >BOM 작성 테스트</h2>
+
+    </div>
+
+    <div >
+        <p>제품명</p>
+        <select  name="product" th:field="*{product}">
+            <option value="양배추">양배추</option>
+            <option value="흑마늘">흑마늘</option>
+            <option value="석류">석류</option>
+            <option value="매실">매실</option>
+        </select>
+    </div>
+
+    <p>양배추 추출액<input type="number" placeholder=th:text="${mat1}" th:field="*{mat1}"></p>
+    <p>흑마늘 추출액<input type="number" placeholder=th:text="${mat2}" th:field="*{mat2}"></p>
+    <p>석류 농축액<input type="number" placeholder=th:text="${mat3}" th:field="*{mat3}"></p>
+    <p>매실 농축액<input type="number" placeholder=th:text="${mat4}" th:field="*{mat4}"></p>
+    <p>콜라겐<input type="number" placeholder=th:text="${mat5}" th:field="*{mat5}"></p>
+    <p>정제수<input type="number" placeholder=th:text="${mat6}" th:field="*{mat6}"></p>
+    <p>포장지<input type="number" placeholder=th:text="${mat7}" th:field="*{mat7}"></p>
+    <p>젤리스틱?</p>
+    <select  name="jelly" th:field="*{jelly}">
+        <option value="2">젤리스틱</option>
+        <option value="1">흑마늘</option>
+        <option value="0">양배추</option>
+    </select>
+
+    <div >
+        <button  type="button"><a href="/">취소</a></button>
+        <button  type="submit"> submit</button>
+    </div>
+
+</form>
+</body>
+</html>

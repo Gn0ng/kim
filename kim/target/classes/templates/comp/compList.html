@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<a th:href="'/'">메인으로</a>
+
+<h2>출력 페이지</h2>
+
+
+
+  <div th:each="barcodeList, status: ${list}">
+    <p>공정명: <span th:text="${barcodeList.processId}" ></span></p>
+
+
+    <p>공정 id: <span th:text="${barcodeList.barcodeId}" ></span></p>
+    <p>수주 id: <span th:text="${barcodeList.orderId}" ></span></p>
+    <p>시작 시간<span th:text="${barcodeList.startTime}"></span></p>
+    <p>재료 id: <span th:text="${barcodeList.matId}" ></span></p>
+    <p>재료 개수: <span th:text="${barcodeList.ea}" ></span></p>
+    <p>종료 시간:<span th:text="${barcodeList.endTime}"></span></p>
+    <p>결과물: <span th:text="${barcodeList.result}"></span></p>
+<p>------------------------------------------------------------------</p>
+    <p></p>
+    <p></p>
+  </div>
+
+</body>
+</html>

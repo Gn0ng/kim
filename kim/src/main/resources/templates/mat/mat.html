@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a th:href="'/'">메인으로</a>
+
+<h2>출력 페이지</h2>
+
+
+<form  th:object="${matdto}">
+    <div th:each="matlist, status: ${list}">
+        <h2 >자재 출력 테스트</h2>
+
+    <p>제품명<span th:text="${matlist.product}" ></span></p>
+    <p>재고량<span th:text="${matlist.ea}" ></span></p>
+    <p>입고일<span th:text="${matlist.arrive}"></span></p>
+
+
+    </div>
+</form>
+</body>
+</html>

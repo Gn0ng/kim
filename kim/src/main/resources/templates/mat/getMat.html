@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a th:href="'/'">메인으로</a>
+<a th:href="'/mat/test'">재고량</a>
+<form action="/getmat" role="form" method="post" th:object="${matdto}">
+  <div >
+    <h2 >자재 입고 테스트</h2>
+
+  </div>
+
+  <div >
+    <p>제품명</p>
+    <select  name="product" th:field="*{product}">
+      <option value="양배추">양배추</option>
+      <option value="흑마늘">흑마늘</option>
+      <option value="석류">석류</option>
+      <option value="매실">매실</option>
+      <option value="콜라겐">콜라겐</option>
+      <option value="포장지">포장지</option>
+    </select>
+  </div>
+
+  <p>입고 개수<input type="number" th:field="*{ea}"></p>
+
+
+
+  <div >
+    <button  type="button"><a href="/">취소</a></button>
+    <button  type="submit"> submit</button>
+  </div>
+
+</form>
+</body>
+</html>

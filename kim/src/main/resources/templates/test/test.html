@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>출력 페이지</h2>
+
+<a th:href="'/'">메인으로</a>
+
+<form  th:object="${bomdto}">
+    <div th:each="bomlist, status: ${list}">
+        <h2 >BOM 출력 테스트</h2>
+
+
+
+
+        <p>제품명<span th:text="${bomlist.product}" ></span></p>
+
+
+
+    <p>양배추 추출액<span th:text="${bomlist.mat1}" ></span></p>
+    <p>흑마늘 추출액<span th:text="${bomlist.mat2}" ></span></p>
+    <p>석류 농축액<span th:text="${bomlist.mat3}"></span></p>
+    <p>매실 농축액<span th:text="${bomlist.mat4}" ></span></p>
+    <p>콜라겐<span th:text="${bomlist.mat5}" ></span></p>
+    <p>정제수<span th:text="${bomlist.mat6}"></span></p>
+    <p>포장지<span th:text="${bomlist.mat7}"></span></p>
+    <p>젤리<span th:text="${bomlist.jelly}" ></span></p>
+
+
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a th:href="'/'">메인으로</a>
+
+<h2>출력 페이지</h2>
+
+
+
+    <div th:each="order, status: ${list}">
+        <h2 >예상 입고일 테스트</h2>
+        <a th:href="'/comp/'+${order.id}">
+        <p>제품명<span th:text="${order.product}" ></span></p>
+        <p>주문량<span th:text="${order.quantity}" ></span></p>
+        <p>수주일<span th:text="${order.orderDate}" ></span></p>
+        <p>완료일<span th:text="${order.comDate}"></span></p>
+        </a>
+
+
+    </div>
+
+</body>
+</html>
